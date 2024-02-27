@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "courses",
     "users",
+    "oauth2_provider",
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Configure users.User model for Django
 
 AUTH_USER_MODEL = "users.User"
+
+# Use Django Admin to login
+
+LOGIN_URL = "/admin/login/"

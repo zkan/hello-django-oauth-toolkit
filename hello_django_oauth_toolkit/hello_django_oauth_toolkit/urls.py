@@ -16,12 +16,13 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 from courses.views import CourseView
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("courses/", CourseView.as_view(), name="courses")
+    path("courses/", CourseView.as_view(), name="courses"),
+    path("o/", include("oauth2_provider.urls", namespace="oauth2_provider")),
 ]
